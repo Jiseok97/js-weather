@@ -3,6 +3,7 @@ import { Alert } from "react-native";
 import Loading from "./Loading";
 import * as Location from "expo-location";
 import axios from "axios";
+import Weather from "./Weather";
 
 const API_KEY = "dd49b595ecca5f37b6724c5a28c4fd80";
 
@@ -12,7 +13,7 @@ export default class extends React.Component {
   };
   getWeather = async (latitud, longitude) => {
     const { data } = await axios.get(
-      `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitude}&appid=${API_KEY}`
+      `http://api.openweathermap.org/data/2.5/weather?lat=${latitud}&lon=${longitude}&appid=${API_KEY}&units=metric`
     );
     console.log(data);
   };
@@ -34,7 +35,7 @@ export default class extends React.Component {
   }
   render() {
     const { isLoading } = this.state;
-    return isLoading ? <Loading /> : null;
+    return isLoading ? <Loading /> : <Weather />;
   }
 }
 
