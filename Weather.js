@@ -52,14 +52,14 @@ const weatherOptions = {
 export default function Weather({ temp, condition }) {
   return (
     <LinearGradient
-      colors={weatherOptions[condition].gradient}
+      colors={weatherOptions["Clear"].gradient} // gradient is not define... why ??
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
           size={96}
-          name={weatherOptions[condition].iconName}
+          name={weatherOptions["Clear"].iconName}
           color="white"
         />
         <Text style={styles.temp}>{temp}℃</Text>
