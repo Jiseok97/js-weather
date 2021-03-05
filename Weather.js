@@ -52,21 +52,21 @@ const weatherOptions = {
 export default function Weather({ temp, condition }) {
   return (
     <LinearGradient
-      colors={weatherOptions["Clear"].gradient} // gradient is not define... why ??
+      colors={weatherOptions["Thunderstorm"].gradient} // gradient is not define... why ??
       style={styles.container}
     >
       <StatusBar barStyle="light-content" />
       <View style={styles.halfContainer}>
         <MaterialCommunityIcons
           size={96}
-          name={weatherOptions["Clear"].iconName}
+          name={weatherOptions["Thunderstorm"].iconName}
           color="white"
         />
         <Text style={styles.temp}>{temp}℃</Text>
       </View>
-      <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
-        <Text style={styles.title}>wetherOptions.title</Text>
-        <Text style={styles.subtitle}>weatherOptions.subtitle</Text>
+      <View style={styles.halfContainer}>
+        <Text style={styles.title}>Thunderstorm</Text>
+        <Text style={styles.subtitle}>Just don't go outside</Text>
       </View>
     </LinearGradient>
   );
